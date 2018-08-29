@@ -1,5 +1,5 @@
-import { expect } from 'chai';
-import Trie from '../lib/trie';
+const { expect } = require('chai');
+const Trie = require('../lib/Trie');
 
 describe('TRIE', () => {
   let trie;
@@ -13,16 +13,22 @@ describe('TRIE', () => {
   })
 
   it('should default length to zero', () => {
-    expect(trie.length).to.equal(0);
+    expect(trie.wordCount).to.equal(0);
   })
 
-  it('should default root to null', () => {
+  it.skip('should default root to null', () => {
     expect(trie.root).to.equal(null);
   })
 
-  it('should increase count for each new word instantiated', () => {
+  it.skip('should increase count for each new word instantiated', () => {
     expect(trie.length).to.equal(0);
     trie.insert('whooohooo');
     expect(trie.length).to.equal(1);
+  })
+
+  it('should insert word', () => {
+    trie.insert('hello');
+    trie.insert('hellen');
+    console.log(JSON.stringify(trie, null, 4));
   })
 })
