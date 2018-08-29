@@ -8,15 +8,15 @@ describe ('NODE', () => {
     node = new Node('p');
   })
 
-  it.skip('should exist', () => {
+  it('should exist', () => {
     expect(node).to.exist;
   })
 
-  it.skip('should take a letter as an argument and assign it to the letter property', () => {
-    expect(node.letter).to.equal('p');
-  })
+  // it.skip('should take a letter as an argument and assign it to the letter property', () => {
+  //   expect(node.letter).to.equal('p');
+  // })
 
-  it.skip('should default end to false', () => {
+  it('should default end to false', () => {
     expect(node.end).to.equal(false);
   })
 
