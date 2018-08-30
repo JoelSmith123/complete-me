@@ -1,16 +1,5 @@
 const { expect } = require('chai');
 const Trie = require('../lib/Trie');
-const fs = require('fs');
-
-const text = "/usr/share/dict/words";
-const dictionary = fs.readFileSync(text).toString().trim().split('\n');
-
-const prefixTrie = new Trie();
-
-prefixTrie.populate(dictionary);
-
-console.log(prefixTrie.count());
-
 
 describe('TRIE', () => {
   let trie;
@@ -36,7 +25,9 @@ describe('TRIE', () => {
   it('should insert word', () => {
     trie.insert('hello');
     trie.insert('hellen');
-    // console.log(JSON.stringify(trie, null, 4));
+    trie.insert('chap');
+    trie.insert('yacht')
+    expect(Object.keys(trie.root.children)).to.deep.equal([ 'h', 'c', 'y']);
   })
 
   it('should return suggestions for search', () => {
@@ -47,7 +38,12 @@ describe('TRIE', () => {
   })
 
   it('should populate with dictionary words', () => {
+    let fs = require('fs');
+    let text = "/usr/share/dict/words";
+    let dictionary = fs.readFileSync(text).toString().trim().split('\n');
+
     trie.populate(dictionary);
     expect(trie.count()).to.equal(235886);
   })
 })
+

@@ -20,3 +20,4 @@ describe ('NODE', () => {
     expect(node.children).to.deep.equal({});
   })
 })
+
