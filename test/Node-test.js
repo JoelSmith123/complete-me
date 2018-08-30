@@ -18,6 +18,7 @@ describe ('NODE', () => {
 
   it('should default children to an empty object', () => {
     expect(node.children).to.deep.equal({});
+    console.log(node.word);
   })
 })
 
