@@ -27,10 +27,6 @@ describe('TRIE', () => {
     expect(trie.wordCount).to.equal(0);
   })
 
-  it.skip('should default root to null', () => {
-    expect(trie.root).to.equal(null);
-  })
-
   it('should increase count for each new word instantiated', () => {
     expect(trie.wordCount).to.equal(0);
     trie.insert('whooohooo');
